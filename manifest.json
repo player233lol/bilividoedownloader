@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Bilibili视频下载器",
+  "version": "1.0.2",
+  "description": "下载bilibili视频等",
+  "permissions": ["tabs", "downloads", "declarativeNetRequest", "offscreen"],
+  "host_permissions": [
+    "*://*.bilibili.com/*",
+    "*://*.bilivideo.com/*",
+    "*://*.hdslb.com/*",
+    "*://b23.tv/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bilibili视频下载器"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      { "id": "ruleset_1", "enabled": true, "path": "rules.json" }
+    ]
+  }
+}
